@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        .main{
+        text-align: center;
+        justify-content: center;
+        padding: 50px;
+        background-color:lightpink;
+        width:430px;
+        height: 450px;
+        margin-left:250px;
+
+       
+        }
+        div h1{
+            color:rgb(8, 12, 255);
+            padding-top: 43px;
+            padding-bottom: 42px;
+            margin-top:-20px;
+            cursor: pointer;
+            display: center;
+           
+
+        }
+        h1:hover{
+            color:rgb(247, 38, 6)
+            
+        }
+        button{
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: white;
+            color: #f307a8;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            
+                }
+        button:hover{
+            background: rgb(8, 241, 117);
+            border: 2px solid rgb(241, 241, 3);
+        }
+        
+
+    </style>
+</head>
+<body><fieldset class="main" >
+    <form onsubmit="handle(event)">
+        <div class="sub-main">
+        <h1>REGISTRATION FORM</h1>
+       <label><b>FIRST NAME: </b> <input type="text" id="firstname" placeholder="enter your firstname"></label>
+        <BR><br> <label><b>LAST NAME: </b><input type="text" id="lastname" placeholder="enter your lastname"required></label>
+        <BR><br><label><b>EMAIL:  </b><input type="text" id="mail" placeholder="enter your email"></label>
+        <BR><br><label><b>GENDER:</b> </label>
+             <label>Male:<input type="radio"name="gender"required></label>
+          <label>Female:<input type="radio"name="gender"></label>
+          <br><br><label><b>PASSWORD:</b> <input type="password" id="pass" placeholder="enter your password"></label>
+          <br><br><label><b>Re-Password: </b><input type="password" id="re-pass" placeholder="confirm your password"></label>
+          <br><br> <label><b>PHONE NO:</b><input TYPE="text" id="ph"  placeholder="enter your number"></label>
+<br><br><b><button type="submit">submit</b></button>
+</div></fieldset></form>
+<script>
+    function handle(event){
+        event.preventDefault();
+        let fn=document.getElementById("firstname").value.trim()
+        let ln=document.getElementById("lastname").value.trim()
+         let m=document.getElementById("mail").value.trim()
+          let p=document.getElementById("ph").value.trim()
+          let pass=document.getElementById("pass").value.trim()
+          let repass=document.getElementById("re-pass").value.trim()
+          if(fn.length<3){
+            alert("enter a valid name");
+          }
+     else if(m === " ") {
+         alert("enter a valid mail")
+    }else if(!m.includes("@")|| !m.includes(".")){
+        alert("invalid mail")
+    }
+    else if(p.length<10){
+        alert("enter a valid number")
+    
+    }
+    else if(pass!==repass){
+        alert("check the password")
+
+    }
+    else{
+        alert("form submitted")
+    }
+}
+
+    
+</script>
+    
+
+    
+</body>
+</html>
